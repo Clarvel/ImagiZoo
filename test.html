@@ -1,0 +1,40 @@
+<html>
+	<head>
+		<style>
+			body, .slider {
+			    display: flex;
+			    justify-content: center;
+			    align-items: center;
+			}
+			.imgwrapper{
+			    min-width: 0; /*don't forget this line, see the explanation below*/
+			}
+			.option{
+				max-width: 50%; /*or width: 100%; if so the above line won't be required */
+			    height: auto;
+			}
+			.question{
+				max-width: 100%; /*or width: 100%; if so the above line won't be required */
+			    height: auto;
+			}
+		</style>
+	</head>
+
+	<body class=" hasGoogleVoiceExt">
+	    <div class="slider" style="flex-direction: column;">
+		    <div class="imgwrapper" style="max-height: 50%;max-width: 50%;">
+		    	<img class="question" src="http://www.placebacon.net/400/400">
+		    </div>
+		    <div style="max-height: 50%;max-width: 50%;">
+		    	<div class="slider">
+		    		<img class="option" src="http://www.placebacon.net/400/400">
+		    		<img class="option" src="http://www.placebacon.net/400/400">
+		    	</div>
+		    	<div class="slider">
+		    		<img class="option" src="http://www.placebacon.net/400/400">
+		    		<img class="option" src="http://www.placebacon.net/400/400">
+		    	</div>
+		    </div>
+		</div>
+	</body>
+</html>
