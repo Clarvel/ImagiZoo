@@ -47,6 +47,7 @@ function main(){
 	playButton.addEventListener('click', onPlay)
 
 	questionImg.addEventListener('click', ()=>{
+		window.play('select')
 		game.style.display = 'none'
 		mainMenu.style.display = ''
 	})
@@ -65,6 +66,7 @@ function main(){
 	onResize()
 }
 function onPlay(){
+	window.play('select')
 	mainMenu.style.display = 'none'
 	popup.style.display = 'none'
 	game.style.display = ''
@@ -103,12 +105,14 @@ function onResize(){
 }
 function onSelect(evt){
 	if(evt.target == correctId){
+		window.play('right')
 		game.style.display = 'none'
 		popup.style.display = ''
 		let url_ = encodeURI(`images/${correctName[0]}/${correctName[0]}_00${correctName[1]}_resc.png`)
 		popup.style.backgroundImage = `url(${url_})`
 		popupHeader.innerHTML = correctName[0].toUpperCase()
 	}else{
+		window.play('wrong')
 		evt.target.style.opacity = '0.5';
 	}
 }
