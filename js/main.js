@@ -18,9 +18,9 @@ let urls = {
 	//"gorilla":"https://www.stlzoo.org/animals/abouttheanimals/mammals/lemursmonkeysapes/westernlowlandgorilla/",
 	//"sea lion":"https://www.stlzoo.org/animals/abouttheanimals/mammals/sealssealions/californiasealion/",
 	"penguin":"https://www.stlzoo.org/animals/abouttheanimals/birds/penguins/",
-	"alligator":"https://www.stlzoo.org/animals/abouttheanimals/reptiles/alligatorsandcrocodiles/"//,
+	"alligator":"https://www.stlzoo.org/animals/abouttheanimals/reptiles/alligatorsandcrocodiles/",
 	//"zebra":"https://www.stlzoo.org/animals/abouttheanimals/mammals/hoofedmammals/grevyszebra/",
-	//"rhinoceros":"https://www.stlzoo.org/animals/abouttheanimals/mammals/hoofedmammals/blackrhinoceros/",
+	"rhinoceros":"https://www.stlzoo.org/animals/abouttheanimals/mammals/hoofedmammals/blackrhinoceros/",
 }
 
 
@@ -58,7 +58,7 @@ function main(){
 	replayButton.addEventListener('click', onPlay)
 
 	zooLocUrl.addEventListener('click', ()=>{
-		open(urls['Giraffe'])
+		open(urls[correctName[0]])
 	})
 
 
