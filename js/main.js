@@ -83,12 +83,9 @@ function onPlay(){
 			// load in new option imgs
 			// HAHAHA u should fix this
 			let k = keys[keys.length * Math.random() << 0]
-			console.log(chosen)
 			while(chosen.indexOf(k) != -1){
-				console.log(k)
 				k = keys[keys.length * Math.random() << 0]
 			}
-			console.log(k)
 			chosen.push(k)
 			optionImgs[a].src = `images/${k}/${k}_00${iteration}_resc.png`
 		}
