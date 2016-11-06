@@ -11,17 +11,18 @@ let zooLocUrl
 let replayButton
 
 let urls = {
-	"Giraffe":"https://www.stlzoo.org/animals/abouttheanimals/mammals/hoofedmammals/reticulatedgiraffe/",
-	"Elephant":"https://www.stlzoo.org/animals/abouttheanimals/mammals/asianelephant/",
-	"Lion":"https://www.stlzoo.org/animals/abouttheanimals/mammals/carnivores/lion/",
-	"Tiger":"https://www.stlzoo.org/animals/abouttheanimals/mammals/carnivores/amurtiger/",
-	"Gorilla":"https://www.stlzoo.org/animals/abouttheanimals/mammals/lemursmonkeysapes/westernlowlandgorilla/",
-	"Sea Lion":"https://www.stlzoo.org/animals/abouttheanimals/mammals/sealssealions/californiasealion/",
-	"Penguin":"https://www.stlzoo.org/animals/abouttheanimals/birds/penguins/",
-	"Alligator":"https://www.stlzoo.org/animals/abouttheanimals/reptiles/alligatorsandcrocodiles/",
-	"Zebra":"https://www.stlzoo.org/animals/abouttheanimals/mammals/hoofedmammals/grevyszebra/",
-	"Rhinoceros":"https://www.stlzoo.org/animals/abouttheanimals/mammals/hoofedmammals/blackrhinoceros/",
+	"giraffe":"https://www.stlzoo.org/animals/abouttheanimals/mammals/hoofedmammals/reticulatedgiraffe/",
+	"elephant":"https://www.stlzoo.org/animals/abouttheanimals/mammals/asianelephant/",
+	"lion":"https://www.stlzoo.org/animals/abouttheanimals/mammals/carnivores/lion/",
+	//"tiger":"https://www.stlzoo.org/animals/abouttheanimals/mammals/carnivores/amurtiger/",
+	//"gorilla":"https://www.stlzoo.org/animals/abouttheanimals/mammals/lemursmonkeysapes/westernlowlandgorilla/",
+	//"sea lion":"https://www.stlzoo.org/animals/abouttheanimals/mammals/sealssealions/californiasealion/",
+	"penguin":"https://www.stlzoo.org/animals/abouttheanimals/birds/penguins/",
+	"alligator":"https://www.stlzoo.org/animals/abouttheanimals/reptiles/alligatorsandcrocodiles/"//,
+	//"zebra":"https://www.stlzoo.org/animals/abouttheanimals/mammals/hoofedmammals/grevyszebra/",
+	//"rhinoceros":"https://www.stlzoo.org/animals/abouttheanimals/mammals/hoofedmammals/blackrhinoceros/",
 }
+
 
 window.addEventListener('resize', onResize)
 
@@ -38,7 +39,7 @@ function main(){
 		document.getElementById('img 3')
 	]
 	correctId = optionImgs[3]
-	correctName = 'Reticulated Giraffe'
+	correctName = 'giraffe'
 	popupHeader = document.getElementById('animal name')
 	zooLocUrl = document.getElementById('zoo location')
 	replayButton = document.getElementById('replay button')
@@ -67,8 +68,30 @@ function onPlay(){
 	mainMenu.style.display = 'none'
 	game.style.display = ''
 	// load in new DD img
+	let keys = Object.keys(urls)
+	let chosen = [keys[keys.length * Math.random() << 0]]
+	let correctPos = 4 * Math.random() << 0
+	let iteration = 1 + 5 * Math.random() << 0
+	questionImg.src = `images/${chosen[0]}/${chosen[0]}_00${iteration}_dd.png`
+	correctId = optionImgs[correctPos]
+	correctName = [chosen[0], iteration]
 	for(let a in optionImgs){
-		// load in new option imgs
+		iteration = 1 + 5 * Math.random() << 0
+		if(a == correctPos){
+			optionImgs[a].src = `images/${chosen[0]}/${chosen[0]}_00${iteration}_resc.png`
+		}else{
+			// load in new option imgs
+			// HAHAHA u should fix this
+			let k = keys[keys.length * Math.random() << 0]
+			console.log(chosen)
+			while(chosen.indexOf(k) != -1){
+				console.log(k)
+				k = keys[keys.length * Math.random() << 0]
+			}
+			console.log(k)
+			chosen.push(k)
+			optionImgs[a].src = `images/${k}/${k}_00${iteration}_resc.png`
+		}
 		optionImgs[a].style.opacity = '1'
 	}
 
@@ -84,8 +107,8 @@ function onSelect(evt){
 	if(evt.target == correctId){
 		game.style.display = 'none'
 		popup.style.display = ''
-		popup.style.backgroundImage = `url(${evt.target.src})`
-		popupHeader.innerHTML = correctName
+		popup.style.backgroundImage = `url(images/${correctName[0]}/${correctName[0]}_00${correctName[1]}_resc.png)`
+		popupHeader.innerHTML = correctName[0].toUpperCase()
 	}else{
 		evt.target.style.opacity = '0.5';
 	}
