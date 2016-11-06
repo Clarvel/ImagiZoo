@@ -14,12 +14,12 @@ let urls = {
 	"giraffe":"https://www.stlzoo.org/animals/abouttheanimals/mammals/hoofedmammals/reticulatedgiraffe/",
 	"elephant":"https://www.stlzoo.org/animals/abouttheanimals/mammals/asianelephant/",
 	"lion":"https://www.stlzoo.org/animals/abouttheanimals/mammals/carnivores/lion/",
-	//"tiger":"https://www.stlzoo.org/animals/abouttheanimals/mammals/carnivores/amurtiger/",
-	//"gorilla":"https://www.stlzoo.org/animals/abouttheanimals/mammals/lemursmonkeysapes/westernlowlandgorilla/",
-	//"sea lion":"https://www.stlzoo.org/animals/abouttheanimals/mammals/sealssealions/californiasealion/",
+	"tiger":"https://www.stlzoo.org/animals/abouttheanimals/mammals/carnivores/amurtiger/",
+	"gorilla":"https://www.stlzoo.org/animals/abouttheanimals/mammals/lemursmonkeysapes/westernlowlandgorilla/",
+	"sea%20lion":"https://www.stlzoo.org/animals/abouttheanimals/mammals/sealssealions/californiasealion/",
 	"penguin":"https://www.stlzoo.org/animals/abouttheanimals/birds/penguins/",
 	"alligator":"https://www.stlzoo.org/animals/abouttheanimals/reptiles/alligatorsandcrocodiles/",
-	//"zebra":"https://www.stlzoo.org/animals/abouttheanimals/mammals/hoofedmammals/grevyszebra/",
+	"zebra":"https://www.stlzoo.org/animals/abouttheanimals/mammals/hoofedmammals/grevyszebra/",
 	"rhinoceros":"https://www.stlzoo.org/animals/abouttheanimals/mammals/hoofedmammals/blackrhinoceros/",
 }
 
