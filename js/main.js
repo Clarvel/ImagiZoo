@@ -16,7 +16,7 @@ let urls = {
 	"lion":"https://www.stlzoo.org/animals/abouttheanimals/mammals/carnivores/lion/",
 	"tiger":"https://www.stlzoo.org/animals/abouttheanimals/mammals/carnivores/amurtiger/",
 	"gorilla":"https://www.stlzoo.org/animals/abouttheanimals/mammals/lemursmonkeysapes/westernlowlandgorilla/",
-	"sea%20lion":"https://www.stlzoo.org/animals/abouttheanimals/mammals/sealssealions/californiasealion/",
+	"sea lion":"https://www.stlzoo.org/animals/abouttheanimals/mammals/sealssealions/californiasealion/",
 	"penguin":"https://www.stlzoo.org/animals/abouttheanimals/birds/penguins/",
 	"alligator":"https://www.stlzoo.org/animals/abouttheanimals/reptiles/alligatorsandcrocodiles/",
 	"zebra":"https://www.stlzoo.org/animals/abouttheanimals/mammals/hoofedmammals/grevyszebra/",
@@ -78,7 +78,7 @@ function onPlay(){
 	for(let a in optionImgs){
 		iteration = 1 + 5 * Math.random() << 0
 		if(a == correctPos){
-			optionImgs[a].src = `images/${chosen[0]}/${chosen[0]}_00${iteration}_resc.png`
+			optionImgs[a].src = encodeURI(`images/${chosen[0]}/${chosen[0]}_00${iteration}_resc.png`)
 		}else{
 			// load in new option imgs
 			// HAHAHA u should fix this
@@ -87,7 +87,7 @@ function onPlay(){
 				k = keys[keys.length * Math.random() << 0]
 			}
 			chosen.push(k)
-			optionImgs[a].src = `images/${k}/${k}_00${iteration}_resc.png`
+			optionImgs[a].src = encodeURI(`images/${k}/${k}_00${iteration}_resc.png`)
 		}
 		optionImgs[a].style.opacity = '1'
 	}
@@ -104,7 +104,8 @@ function onSelect(evt){
 	if(evt.target == correctId){
 		game.style.display = 'none'
 		popup.style.display = ''
-		popup.style.backgroundImage = `url(images/${correctName[0]}/${correctName[0]}_00${correctName[1]}_resc.png)`
+		let url_ = encodeURI(`images/${correctName[0]}/${correctName[0]}_00${correctName[1]}_resc.png`)
+		popup.style.backgroundImage = `url(${url_})`
 		popupHeader.innerHTML = correctName[0].toUpperCase()
 	}else{
 		evt.target.style.opacity = '0.5';
