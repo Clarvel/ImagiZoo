@@ -17,8 +17,8 @@ let urls = {
 	"tiger":"https://www.stlzoo.org/animals/abouttheanimals/mammals/carnivores/amurtiger/",
 	"gorilla":"https://www.stlzoo.org/animals/abouttheanimals/mammals/lemursmonkeysapes/westernlowlandgorilla/",
 	"sea lion":"https://www.stlzoo.org/animals/abouttheanimals/mammals/sealssealions/californiasealion/",
-	"penguin":"https://www.stlzoo.org/animals/abouttheanimals/birds/penguins/kingpenguin/",
-	"alligator":"https://www.stlzoo.org/animals/abouttheanimals/reptiles/alligatorsandcrocodiles/americanalligator/",
+	"penguin":"https://www.stlzoo.org/animals/abouttheanimals/birds/penguins/",
+	"alligator":"https://www.stlzoo.org/animals/abouttheanimals/reptiles/alligatorsandcrocodiles/",
 	"zebra":"https://www.stlzoo.org/animals/abouttheanimals/mammals/hoofedmammals/grevyszebra/",
 	"rhinoceros":"https://www.stlzoo.org/animals/abouttheanimals/mammals/hoofedmammals/blackrhinoceros/",
 }
@@ -66,21 +66,18 @@ function main(){
 }
 function onPlay(){
 	mainMenu.style.display = 'none'
+	popup.style.display = 'none'
 	game.style.display = ''
 	// load in new DD img
 	let keys = Object.keys(urls)
 	let chosen = [keys[keys.length * Math.random() << 0]]
 	let correctPos = 4 * Math.random() << 0
 	let iteration = 1 + 5 * Math.random() << 0
-	let iterationTarget = 1 + 5 * Math.random() << 0
-	questionImg.src = `images/${chosen[0]}/${chosen[0]}_00${iterationTarget}_dd.png`
+	questionImg.src = `images/${chosen[0]}/${chosen[0]}_00${iteration}_dd.png`
 	correctId = optionImgs[correctPos]
-	correctName = [chosen[0], iterationTarget]
+	correctName = [chosen[0], iteration]
 	for(let a in optionImgs){
 		iteration = 1 + 5 * Math.random() << 0
-		while(iteration == iterationTarget){
-			iteration = 1 + 5 * Math.random() << 0
-		}
 		if(a == correctPos){
 			optionImgs[a].src = encodeURI(`images/${chosen[0]}/${chosen[0]}_00${iteration}_resc.png`)
 		}else{
